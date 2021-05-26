@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "@reach/router";
-import { Button, Grid } from "@material-ui/core";
-import { useStyles } from "./visualUtils";
+import React from 'react';
+import { Link } from '@reach/router';
+import { Button, Grid } from '@material-ui/core';
+import { useStyles } from './visualUtils';
 
 const Sidebar = (props) => {
   const classes = useStyles();
   return (
     <div>
-      <Grid container spacing={1}>
+      <Grid container spacing={0}>
         <Grid item xs={12} className={classes.logo}>
           <img
             alt="logo"

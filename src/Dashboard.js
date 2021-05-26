@@ -1,7 +1,7 @@
-import React from "react";
-import Menu from "./Menu";
-import Cards from "./Cards";
-import data from "./data";
+import React from 'react';
+import Menu from './Menu';
+import Cards from './Cards';
+import data from './data';
 
 const Dashboard = (props) => {
   let cardsData = data;

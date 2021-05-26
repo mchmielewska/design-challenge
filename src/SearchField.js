@@ -1,8 +1,8 @@
-import React from "react";
-import { createMuiTheme } from "@material-ui/core/styles";
-import { useStyles, palette } from "./visualUtils";
-import { TextField, Button } from "@material-ui/core";
-import { ThemeProvider } from "@material-ui/styles";
+import React from 'react';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { useStyles, palette } from './visualUtils';
+import { TextField, Button, Box, Grid } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
 
 const theme = createMuiTheme({
   palette: {
@@ -16,18 +16,20 @@ const SearchField = (props) => {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <div className="searchContainer">
-        <form className={classes.formRoot} noValidate autoComplete="off">
-          <TextField
+      <Grid item className={classes.searchContainer}>
+        <form noValidate autoComplete="off">
+          <Box className={classes.formRoot} >
+              <TextField
             id="searchInput"
             label="Search"
             variant="outlined"
             color="primary"
             className={classes.inputField}
           />
-          <Button className={classes.menuButton}>Search</Button>
+              <Button className={classes.menuButton}>Search</Button>
+              </Box>
         </form>
-      </div>
+      </Grid>
     </ThemeProvider>
   );
 };
