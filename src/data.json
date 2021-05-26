@@ -1,6 +1,6 @@
 [
   {
-    "offerName": "Test Offer",
+    "offerName": "2016 Freightliner CASCADIA 125",
     "tags": ["tag1", "tag2", "tag3"],
     "id": "1",
     "location": "Munich",
@@ -9,7 +9,7 @@
     "publishDate": "2020-03-19T23:22:36.236Z"
   },
   {
-    "offerName": "Test Offer",
+    "offerName": ["2016 Freightliner CASCADIA 125"],
     "tags": ["tag1", "tag2", "tag3"],
     "id": "2",
     "location": "Munich",
@@ -18,7 +18,7 @@
     "publishDate": "2020-03-12T23:22:36.236Z"
   },
   {
-    "offerName": "Test Offer",
+    "offerName": "2016 Freightliner CASCADIA 125",
     "tags": ["tag1", "tag2", "tag3"],
     "id": "3",
     "location": "Munich",
@@ -27,9 +27,36 @@
     "publishDate": "2020-02-19T23:22:36.236Z"
   },
   {
-    "offerName": "Test Offer",
+    "offerName": "2016 Freightliner CASCADIA 125",
     "tags": ["tag1", "tag2", "tag3"],
     "id": "4",
+    "location": "Munich",
+    "imageSrc": "https://res.cloudinary.com/fluffy-carnival/image/upload/v1621931938/mitchell-luo-czTfiHjjviE-unsplash_wyorjh.jpg",
+    "currentOffer": 123,
+    "publishDate": "2020-04-19T23:22:36.236Z"
+  },
+  {
+    "offerName": ["2016 Freightliner CASCADIA 125"],
+    "tags": ["tag1", "tag2", "tag3"],
+    "id": "22",
+    "location": "Munich",
+    "imageSrc": "https://res.cloudinary.com/fluffy-carnival/image/upload/v1621931938/mitchell-luo-czTfiHjjviE-unsplash_wyorjh.jpg",
+    "currentOffer": 123,
+    "publishDate": "2020-03-12T23:22:36.236Z"
+  },
+  {
+    "offerName": "2016 Freightliner CASCADIA 125",
+    "tags": ["tag1", "tag2", "tag3"],
+    "id": "64",
+    "location": "Munich",
+    "imageSrc": "https://res.cloudinary.com/fluffy-carnival/image/upload/v1621931938/mitchell-luo-czTfiHjjviE-unsplash_wyorjh.jpg",
+    "currentOffer": 123,
+    "publishDate": "2020-02-19T23:22:36.236Z"
+  },
+  {
+    "offerName": "2016 Freightliner CASCADIA 125",
+    "tags": ["tag1", "tag2", "tag3"],
+    "id": "23",
     "location": "Munich",
     "imageSrc": "https://res.cloudinary.com/fluffy-carnival/image/upload/v1621931938/mitchell-luo-czTfiHjjviE-unsplash_wyorjh.jpg",
     "currentOffer": 123,

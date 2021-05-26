@@ -1,28 +1,34 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { useStyles, palette } from "./visualUtils";
 import { TextField, Button } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: palette.blue60,
     },
-    'inputField input': {
-        padding: 10
-    }
   },
-}));
+});
 
 const SearchField = (props) => {
   const classes = useStyles();
   return (
-    <div className="searchContainer">
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="searchInput" label="Search" variant="outlined" color="primary" className={classes.inputField}/>
-        <Button variant="outlined">Search</Button>
-      </form>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="searchContainer">
+        <form className={classes.formRoot} noValidate autoComplete="off">
+          <TextField
+            id="searchInput"
+            label="Search"
+            variant="outlined"
+            color="primary"
+            className={classes.inputField}
+          />
+          <Button className={classes.menuButton}>Search</Button>
+        </form>
+      </div>
+    </ThemeProvider>
   );
 };
 

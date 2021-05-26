@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import Dashboard from "./Dashboard";
 
 import { Grid, Container } from "@material-ui/core";
-import { useStyles } from "./visualUtils"
+import { useStyles } from "./visualUtils";
 
 const App = () => {
   const classes = useStyles();
