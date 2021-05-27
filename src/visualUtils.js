@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export const palette = {
   blue10: '#EBF0F2',
@@ -10,6 +9,7 @@ export const palette = {
   blue100: '#33657E',
   yellow: '#FAE100',
   darkblue: '#002334',
+  boxShadow: '0px 1px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)'
 };
 
 export const useStyles = makeStyles((theme) => ({
@@ -18,9 +18,12 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: 25,
     marginLeft: -12,
     justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 5,
+    },
     [theme.breakpoints.down('xs')]: {
       marginLeft: -16,
-      padding: '20px 0 20px 8px'
+      padding: '15px 0 20px 8px',
     },
   },
   appRoot: {
@@ -40,21 +43,15 @@ export const useStyles = makeStyles((theme) => ({
   dashboardContainer: {
     padding: '30px 3%',
     margin: 0,
+    [theme.breakpoints.down('sm')]: {
+      padding: '5px 3% 10px 3%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: '15px 3% 10px 3%',
+    },
   },
   root: {
     backgroundColor: palette.blue10,
-  },
-  backgroundDark: {
-    backgroundColor: palette.blue60,
-    color: palette.blue10,
-    textTransform: 'uppercase',
-    margin: 0,
-    padding: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-    lineHeight: 1.5,
-    fontSize: 16,
-    fontWeight: 'bold',
   },
   tag: {
     backgroundColor: palette.blue20,
@@ -102,8 +99,7 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     '&:hover': {
       backgroundColor: palette.blue60,
-      boxShadow:
-        '0px 1px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)',
+      boxShadow: palette.boxShadow
     },
   },
   fullWidthButton: {
@@ -116,12 +112,10 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: 5,
     transition: '0.5s',
     textAlign: 'left',
-    
     '&:hover': {
       backgroundColor: palette.blue100,
       color: palette.yellow,
-      boxShadow:
-        '0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)',
+      boxShadow: palette.boxShadow
     },
   },
   bold: {
@@ -144,8 +138,7 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
     padding: '10px 20px',
     fontSize: 16,
-    boxShadow:
-      '0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)',
+    boxShadow: palette.boxShadow,
     transition: '0.5s',
     '&:hover': {
       color: palette.blue10,
@@ -158,14 +151,14 @@ export const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
-        justifyContent: 'center',
-      },
+      justifyContent: 'center',
+    },
   },
   formRoot: {
     justifyContent: 'stretch',
     display: 'flex',
     '& input': {
-      padding: '8px'
+      padding: '8px',
     },
     '& label': {
       fontSize: '0.875rem',
@@ -175,7 +168,7 @@ export const useStyles = makeStyles((theme) => ({
   searchContainer: {
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   menuButton: {
     backgroundColor: palette.blue60,
@@ -186,14 +179,17 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
     transition: '0.5s',
     boxShadow:
-    '0px 3px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 4px 2px 0px rgba(0,0,0,0.12)',
+      '0px 3px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 4px 2px 0px rgba(0,0,0,0.12)',
     '&:hover': {
       backgroundColor: palette.blue100,
-      color: palette.yellow
+      color: palette.yellow,
     },
   },
   logo: {
     margin: '45px 25px 40px 25px',
+    [theme.breakpoints.down('sm')]: {
+      margin: '25px 25px 15px 25px',
+    },
   },
   sortContainer: {
     display: 'flex',
@@ -205,4 +201,20 @@ export const useStyles = makeStyles((theme) => ({
       marginBottom: 10,
     },
   },
+  offerImage: {
+    '& > img': {
+      [theme.breakpoints.up('md')]: {
+        height: '18vw',
+      },
+      [theme.breakpoints.down('md')]: {
+        height: '25vw',
+      },
+      [theme.breakpoints.down('sm')]: {
+        height: '35vw',
+      },
+      [theme.breakpoints.down('xs')]: {
+        height: '75vw',
+      },
+    },
+  }
 }));

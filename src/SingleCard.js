@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { Card, Paper, Box, Grid } from '@material-ui/core';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import { Card, Box, Grid, CardActionArea, CardActions, CardContent, CardMedia, Button } from '@material-ui/core';
 import { useStyles } from './visualUtils';
 
 const SingleCard = (props) => {
@@ -20,10 +15,11 @@ const SingleCard = (props) => {
         );
       })
     : null;
+
   return (
     <Grid item xs={12} sm={6} lg={4}>
       <Card className={classes.root}>
-        <CardActionArea>
+        <CardActionArea className={classes.offerImage}>
           <CardMedia
             component="img"
             alt="truck"
@@ -50,8 +46,7 @@ const SingleCard = (props) => {
             Ask price &nbsp; <span className={classes.bold}>XYZ €</span>
           </Button>
           <Button className={classes.fullWidthButton}>
-            Currently highest offer &nbsp;
-            <span className={classes.bold}>{props.currentOffer} €</span>
+            Currently highest offer &nbsp; <span className={classes.bold}>{props.currentOffer} €</span>
           </Button>
         </CardActions>
       </Card>

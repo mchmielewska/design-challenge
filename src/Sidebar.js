@@ -15,10 +15,14 @@ const Sidebar = (props) => {
           ></img>
         </Grid>
         <Grid item xs={12}>
-          <Button className={classes.fullWidth}>Dashboard</Button>
+          <Link to="/">
+            <Button className={classes.fullWidth}>Dashboard</Button>
+          </Link>
         </Grid>
         <Grid item xs={12}>
-          <Button className={classes.fullWidth}>Logout</Button>
+          <Link to="/logout">
+            <Button className={classes.fullWidth}>Logout</Button>
+          </Link>
         </Grid>
       </Grid>
     </div>
