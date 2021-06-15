@@ -1,56 +1,55 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { Card, Box, Grid, CardActionArea, CardActions, CardContent, CardMedia, Button } from '@material-ui/core';
-import { useStyles } from './visualUtils';
 
 const SingleCard = (props) => {
-  const classes = useStyles();
   const tags = props.tags
     ? props.tags.map((tag) => {
-        const tagKey = 'tag' + { tag } + Math.random().toString();
-        return (
-          <span key={tagKey} className={classes.tag}>
-            {tag}
-          </span>
-        );
+        if (tag !== '') {
+          const tagKey = 'tag' + { tag } + Math.random().toString();
+          return (
+            <span key={tagKey} className="tag">
+              {tag}
+            </span>
+          );
+        }
       })
     : null;
 
+  const backgroundImage = 'url(' + props.vehicle_picture_front + ')';
   return (
-    <Grid item xs={12} sm={6} lg={4}>
-      <Card className={classes.root}>
-        <CardActionArea className={classes.offerImage}>
-          <CardMedia
-            component="img"
-            alt="truck"
-            image={props.imageSrc}
-            title="Truck"
-          />
-          <CardContent>
-            <Link to={'/' + props.id} className="offerLink">
-              <Box className={classes.offerHeading}>{props.offerName}</Box>
+    <div className="root">
+      <div className="card">
+        <div
+          alt="truck"
+          className="offerImage card-media"
+          style={{ backgroundImage: backgroundImage }}
+          title="Truck"
+        />
+        <div className="card-content">
+          <Link to={'/' + props.uid} className="offerLink">
+            <div className="offerHeading">{props.title}</div>
+          </Link>
+          <div className="tagsContainer">{tags}</div>
+          <div className="offerDetails">
+            <Link to={'/' + props.uid} className="offerLink">
+              <span className="details">{props.shortCode}</span>
             </Link>
-            <Box className={classes.tagsContainer}>{tags}</Box>
-            <Box className={classes.offerDetails}>
-              <Link to={'/' + props.id} className="offerLink">
-                <span className={classes.details}>Offer ID: {props.id}</span>
-              </Link>
-              <Link to={'/' + props.id} className="offerLink">
-                <span className={classes.details}>{props.location}</span>
-              </Link>
-            </Box>
-          </CardContent>
-        </CardActionArea>
-        <CardActions className={classes.fullWidthContainer}>
-          <Button className={classes.fullWidthButton}>
-            Ask price &nbsp; <span className={classes.bold}>XYZ €</span>
-          </Button>
-          <Button className={classes.fullWidthButton}>
-            Currently highest offer &nbsp; <span className={classes.bold}>{props.currentOffer} €</span>
-          </Button>
-        </CardActions>
-      </Card>
-    </Grid>
+            <Link to={'/' + props.uid} className="offerLink">
+              <span className="details">{props.location}</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="fullWidthContainer">
+        <button className="fullWidthButton">
+          Ask price &nbsp; <span className="bold">{props.askPrice} €</span>
+        </button>
+        <button className="fullWidthButton">
+          Currently highest offer &nbsp;{' '}
+          <span className="bold">{props.highestBid} €</span>
+        </button>
+      </div>
+    </div>
   );
 };
 

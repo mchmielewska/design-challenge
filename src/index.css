@@ -1,3 +1,15 @@
+:root {
+  --blue10: #ebf0f2;
+  --blue20: #d6e0e5;
+  --blue40: #adc1cb;
+  --blue60: #85a3b2;
+  --blue80: #5c8498;
+  --blue100: #33657e;
+  --yellow: #fae100;
+  --darkblue: #002334;
+  --boxShadow: '0px 1px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)';
+}
+
 * {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -6,6 +18,7 @@
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 body {
@@ -20,4 +33,333 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.appRoot {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.root {
+  background-color: var(--blue10);
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.formRoot {
+  justify-content: stretch;
+  display: flex;
+}
+
+.formRoot input {
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  box-shadow: var(--boxShadow);
+}
+
+.formRoot input:active, .formRoot input:hover, formRoot input:focus {
+  border-color: #adc1cb;
+}
+
+.formRoot label {
+  font-size: 0.875rem;
+  /* transform: translate(10px, 10px) scale(1) */
+}
+
+.sidebarContainer {
+  background-color: var(--blue80);
+  margin: 0;
+  grid-column: 1 / span 2;
+}
+
+.dashboardContainer {
+  padding: 30px 3%;
+  margin: 0;
+  grid-column: 3 / -1;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  margin-top: 25px;
+  justify-content: space-between;
+  grid-gap: 24px;
+}
+
+.menuButton {
+  background-color: var(--blue60);
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+  margin-left: 10px;
+  transition: 0.5s;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 3px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 4px 2px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+
+.menuButton:hover {
+  background-color: var(--blue100);
+  color: var(--yellow);
+}
+
+.fullWidthButton {
+  width: 100%;
+  background-color: var(--yellow);
+  justify-content: start;
+  padding: 10px 20px;
+  font-size: 0.755rem;
+  border-radius: 0;
+  margin-top: 5px;
+  transition: 0.5s;
+  text-align: left;
+  border: none;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.fullWidthButton:hover {
+  background-color: var(--blue100);
+  color: var(--yellow);
+  box-shadow: var(--boxShadow);
+}
+
+.fullWidth {
+  width: 100%;
+  background-color: var(--blue100);
+  color: var(--blue10);
+  font-weight: bold;
+  padding: 15px 0;
+  transition: 0.5s;
+  margin-top: 10px;
+  border-radius: 0;
+  border: none;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.fullWidth:hover {
+  background-color: var(--blue60);
+  box-shadow: var(--boxShadow);
+}
+
+.tagsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 2;
+  align-items: start;
+  align-content: start;
+  margin-bottom: 5px;
+}
+
+.tag {
+  background-color: var(--blue20);
+  color: var(--darkblue);
+  font-size: 0.755rem;
+  margin: 5px;
+  padding: 7.5px 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.tag:hover {
+  color: var(--blue10);
+  background-color: var(--blue40);
+  cursor: pointer;
+}
+
+.details {
+  background-color: var(--blue20);
+  color: var(--darkblue);
+  margin: 0;
+  padding: 7.5px 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.details:hover {
+  color: var(--blue10);
+  background-color: var(--blue40);
+}
+
+.offerDetails {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.755rem;
+  line-height: 2;
+}
+
+.offerHeading {
+  background-color: var(--blue40);
+  border: none;
+  border-radius: 5px;
+  color: var(--darkblue);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: var(--boxShadow);
+  transition: 0.5s;
+}
+
+.offerHeading:hover {
+  color: var(--blue10);
+  background-color: var(--blue60);
+}
+
+img.logo {
+  margin: 45px 25px 40px 25px;
+}
+
+.offerImage {
+  height: 18vw;
+}
+
+.paper {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+}
+
+.card-content {
+  padding: 16px;
+  height: auto;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.card {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fullWidthContainer {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px
+}
+
+.card-media {
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.sortContainer span {
+  text-transform: uppercase;
+  padding: 7.5px 15px;
+  letter-spacing: 0.02857em;
+  font-size: 0.8rem
+}
+
+.menuContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offerImage {
+    height: 25vw;
+  }
+
+  .sidebarContainer {
+    grid-column: 1 / span 3;
+  }
+
+  .dashboardContainer {
+    grid-column: 4 / -1;
+    padding: 5px 3% 10px 3%;
+  }
+}
+
+@media (max-width: 960px) {
+
+  .menuContainer {
+    justify-content: center;
+  }
+
+  .sidebarContainer {
+    grid-column: 1 / -1;
+  }
+
+  .dashboardContainer {
+    grid-column: 1 / -1;
+    padding: 15px 3% 10px 3%;
+  }
+
+  .offerImage {
+    height: 35vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  img.logo {
+    margin: '25px 25px 15px 25px';
+  }
+
+  .offerImage {
+    height: 75vw;
+  }
 }
