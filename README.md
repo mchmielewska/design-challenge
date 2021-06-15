@@ -5,6 +5,9 @@ This is a solution for the homework assignment. The purpose of the app is to dis
 Technology wise, I used React with functional components. For the visual framework, I chose material ui. I think it allows for a clean, modern design that also matches well with the provided wireframes.
 
 I mostly aimed to follow the provided guidelines: I aimed for high fidelity to the wireframes as well as using the provided color scheme. When I had doubts or needed inspiration, I checked the truckoo website and used that as a guideline.
+<br><br>
+
+<p align="center"><img src="https://res.cloudinary.com/fluffy-carnival/image/upload/v1622153024/truckoo_ju2avp.jpg"></p>
 
 ## Setup
 
